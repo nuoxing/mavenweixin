@@ -1,12 +1,12 @@
 /*
- * ÎÄ¼şÃû£ºMenuController.java
- * °æÈ¨£ºCopyright by www.chinauip.com
- * ÃèÊö£º
- * ĞŞ¸ÄÈË£ºAdministrator
- * ĞŞ¸ÄÊ±¼ä£º2018Äê1ÔÂ17ÈÕ
- * ¸ú×Ùµ¥ºÅ£º
- * ĞŞ¸Äµ¥ºÅ£º
- * ĞŞ¸ÄÄÚÈİ£º
+ * ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½MenuController.java
+ * ï¿½ï¿½È¨ï¿½ï¿½Copyright by www.chinauip.com
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½Ş¸ï¿½ï¿½Ë£ï¿½Administrator
+ * ï¿½Ş¸ï¿½Ê±ï¿½ä£º2018ï¿½ï¿½1ï¿½ï¿½17ï¿½ï¿½
+ * ï¿½ï¿½ï¿½Ùµï¿½ï¿½Å£ï¿½
+ * ï¿½Ş¸Äµï¿½ï¿½Å£ï¿½
+ * ï¿½Ş¸ï¿½ï¿½ï¿½ï¿½İ£ï¿½
  */
 
 package com.weixin.controller;
@@ -27,6 +27,13 @@ public class MenuController
     @Autowired
     private MenuService menuService;
     
+    /**
+     * 
+     * æè¿°: èœå•ç®¡ç† å¢åŠ è‡ªå®šä¹‰èœå•<br>
+     * 
+     * @return 
+     * @see
+     */
     @RequestMapping("/create")
     @ResponseBody
     public  R createMenu(){

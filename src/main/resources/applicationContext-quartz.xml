@@ -11,7 +11,7 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  ">
 
 
-
+    <!-- 定时任务  定时获取accessToken -->
     <task:scheduled-tasks>  
         <task:scheduled ref="getAccessTokenQuartz" method="getAccessToken" cron="0 0 0/1 * * ?" />  
     </task:scheduled-tasks>  

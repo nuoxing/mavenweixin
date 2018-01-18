@@ -8,11 +8,11 @@ package com.quartz;
 
 import org.springframework.stereotype.Component;
 
+import com.util.LogUtils;
 import com.weixin.service.JsSdkService;
 import com.weixin.util.ConstantUtils;
 import com.weixin.util.HttpClientUtils;
 
-import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
 
@@ -35,26 +35,23 @@ public class GetAccessTokenQuartz
         if (!"error".equals(res))
         {
             JSONObject json;
-            try
+            json = JSONObject.fromObject(res);
+            if (json.getString("access_token") != null)
             {
-                json =JSONObject.fromObject(res);
-                if (json.getString("access_token") != null)
+                ConstantUtils.ACCESS_TOKEN = json.getString("access_token");
+                res = HttpClientUtils.commonGet(ConstantUtils.getJsapiTicketUrl(), "utf-8");
+                json = JSONObject.fromObject(res);
+                if (json.getString("errmsg").equals("ok"))
                 {
-                    ConstantUtils.ACCESS_TOKEN = json.getString("access_token");
-                    
-                    //
-                    res = HttpClientUtils.commonGet(ConstantUtils.getJsapiTicketUrl(), "utf-8");
-                    json = JSONObject.fromObject(res);
-                    if (json.getString("errmsg").equals("ok")){
-                        JsSdkService.jsapi_ticket = json.getString("ticket");
-                    }
+                    JsSdkService.jsapi_ticket = json.getString("ticket");
+                }else{
+                    LogUtils.error(getClass(), "获取jsapi_ticket失败,errcode="+json.getString("errcode")+"  errmsg="+json.getString("errmsg"));
                 }
+            }else{
+                LogUtils.error(getClass(), "获取accessToken失败,errcode="+json.getString("errcode")+"  errmsg="+json.getString("errmsg"));
             }
-            catch (JSONException e)
-            {
-                e.printStackTrace();
-            }
-
+        }else{
+            LogUtils.error(getClass(), "获取accessToken失败");
         }
     }
 

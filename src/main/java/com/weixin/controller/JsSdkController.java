@@ -1,12 +1,12 @@
 /*
- * ÎÄ¼şÃû£ºJsSdkController.java
- * °æÈ¨£ºCopyright by www.chinauip.com
- * ÃèÊö£º
- * ĞŞ¸ÄÈË£ºAdministrator
- * ĞŞ¸ÄÊ±¼ä£º2018Äê1ÔÂ17ÈÕ
- * ¸ú×Ùµ¥ºÅ£º
- * ĞŞ¸Äµ¥ºÅ£º
- * ĞŞ¸ÄÄÚÈİ£º
+ * ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½JsSdkController.java
+ * ï¿½ï¿½È¨ï¿½ï¿½Copyright by www.chinauip.com
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½Ş¸ï¿½ï¿½Ë£ï¿½Administrator
+ * ï¿½Ş¸ï¿½Ê±ï¿½ä£º2018ï¿½ï¿½1ï¿½ï¿½17ï¿½ï¿½
+ * ï¿½ï¿½ï¿½Ùµï¿½ï¿½Å£ï¿½
+ * ï¿½Ş¸Äµï¿½ï¿½Å£ï¿½
+ * ï¿½Ş¸ï¿½ï¿½ï¿½ï¿½İ£ï¿½
  */
 
 package com.weixin.controller;
@@ -29,6 +29,15 @@ public class JsSdkController
     @Autowired
     private JsSdkService jsSdkService;
     
+    
+    /**
+     * 
+     * æè¿°:è·å–js sdkè°ƒç”¨çš„ä¸€äº›å‚æ•° <br>
+     * 
+     * @param url
+     * @return 
+     * @see
+     */
     @RequestMapping("/getData")
     @ResponseBody
     public R getJsSdkData(String url){

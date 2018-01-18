@@ -14,6 +14,7 @@ package com.weixin.wechat.menu;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Menu
 {
 
