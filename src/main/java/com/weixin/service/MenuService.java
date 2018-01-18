@@ -57,13 +57,22 @@ public class MenuService
         vo2.setName("一级2");
         List<ViewMenu> listView= new ArrayList<ViewMenu>();
         ViewMenu view  = new ViewMenu();
-        view.setName("二级welcome");
+        view.setName("address");
         view.setType("view");
-        view.setUrl("http://wuhuikun.6655.la/weixin/welcome.html");
-        vo2.setListView(listView);
-        vo2.setListView(listView);
+        view.setUrl("http://wuhuikun.6655.la/weixin/html/address.html");
+        
+        ViewMenu view2  = new ViewMenu();
+        view2.setName("share");
+        view2.setType("view");
+        view2.setUrl("http://wuhuikun.6655.la/weixin/html/share.html");
+   
         listView.add(view);
+        listView.add(view2);
+        
+        vo2.setListView(listView);
         listSub.add(vo2);
+        
+      
         menu.setListSub(listSub);
         return menu.toString();
     }
