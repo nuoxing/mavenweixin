@@ -65,9 +65,15 @@ public class MenuService
         view2.setName("share");
         view2.setType("view");
         view2.setUrl("http://wuhuikun.6655.la/weixin/html/share.html");
+        
+        ViewMenu view3  = new ViewMenu();
+        view3.setName("template");
+        view3.setType("view");
+        view3.setUrl("http://wuhuikun.6655.la/weixin/html/template.html");
    
         listView.add(view);
         listView.add(view2);
+        listView.add(view3);
         
         vo2.setListView(listView);
         listSub.add(vo2);

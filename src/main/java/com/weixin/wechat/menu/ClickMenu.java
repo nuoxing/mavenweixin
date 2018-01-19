@@ -13,7 +13,7 @@ package com.weixin.wechat.menu;
 
 /**
  * 
- * 一级菜单
+ * click菜单
  * 〈功能详细描述〉
  * @author Administrator
  * @version 2018年1月17日

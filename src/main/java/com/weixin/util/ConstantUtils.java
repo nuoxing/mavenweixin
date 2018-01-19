@@ -32,11 +32,18 @@ public class ConstantUtils
     //获取jsapi_ticket 的链接 jsapi_ticket 是用于调用js sdk的凭证
     public static String  JSAPI_TICKER_URL="https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=replace&type=jsapi";
     
+    
+    public static String TEMPLATE_MSG_URL = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=";
+    
     public static String getCreateMenuUrl(){
         return CREATE_MENU_URL+ACCESS_TOKEN;
     }
     
     public static String getJsapiTicketUrl(){
         return JSAPI_TICKER_URL.replace("replace", ACCESS_TOKEN);
+    }
+    
+    public static String getTemplateMsgUrl(){
+        return TEMPLATE_MSG_URL + ACCESS_TOKEN;
     }
 }
